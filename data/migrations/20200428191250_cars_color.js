@@ -1,7 +1,7 @@
 
 exports.up = async function(knex) {
     await knex.schema.alterTable('cars', (table) => {
-        table.text('color');
+        table.text('color').notNull();
     })
   
 };
