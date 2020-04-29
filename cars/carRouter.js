@@ -7,8 +7,9 @@ router.get('/', async (req, res, next) => {
     console.log('here')
     try {
         const cars = await db("cars")
-        res.json(cars)
+        res.status(200).json(cars)
     } catch(err) {
+        console.log(err)
         next(err)
     }
 })
