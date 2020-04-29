@@ -4,6 +4,7 @@ const db = require('../data/config');
 const router = express.Router();
 
 router.get('/', async (req, res, next) => {
+    console.log('here')
     try {
         const cars = await db("cars")
         res.json(cars)
