@@ -1,5 +1,5 @@
 const express = require('express');
-const helmet = require('helmet');
+const cors = require('cors');
 const carRouter = require('./cars/carRouter');
 
 //set server
@@ -7,8 +7,8 @@ const server = express();
 const port = process.env.PORT || 5000;
 
 //import middleware
-server.use(helmet());
 server.use(express.json());
+server.use(cors());
 
 //import router
 server.use('/cars', carRouter);
